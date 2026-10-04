@@ -1,14 +1,13 @@
 
-
 import argparse
 import os
 import sys
 
 import requests
 
-# Where the Flask API lives. Override with the INVENTORY_API_URL environment variable.
+
 API_URL = os.environ.get("INVENTORY_API_URL", "http://127.0.0.1:5000")
-REQUEST_TIMEOUT = 15  # seconds (the API itself may call OpenFoodFacts)
+REQUEST_TIMEOUT = 15 
 
 
 class CLIError(Exception):
@@ -41,7 +40,7 @@ def api_request(method, path, **kwargs):
         body = None
 
     if not response.ok:
-        # Our API always answers errors as {"error": "..."}.
+      
         message = body.get("error") if isinstance(body, dict) else None
         raise CLIError(message or f"API returned HTTP {response.status_code}")
     return body
