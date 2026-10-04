@@ -1,18 +1,4 @@
-"""
-Inventory Management System - CLI frontend
 
-Talks to the Flask API over HTTP (start it first with `python app.py`).
-
-Examples:
-    python cli.py list
-    python cli.py view 3
-    python cli.py add --name "Organic Almond Milk" --price 3.99 --stock 25
-    python cli.py add --barcode 3017620422003 --price 5.49 --stock 40
-    python cli.py update 3 --price 4.25 --stock 18
-    python cli.py delete 3 --yes
-    python cli.py search --barcode 3017620422003
-    python cli.py search --name "almond milk"
-"""
 
 import argparse
 import os
